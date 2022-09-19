@@ -5,7 +5,7 @@ import './style/game.scss';
 
 const App = (): JSX.Element =>
   (
-    <div>
+    <div className="main-wrap">
       <Board />
     </div>
   );
