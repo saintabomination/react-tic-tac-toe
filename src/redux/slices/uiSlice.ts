@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import type { PayloadAction } from '@reduxjs/toolkit';
+
 import type {
   PlayerValue,
   TileValue,
@@ -23,13 +25,16 @@ export const uiSlice = createSlice({
   name: 'ui',
   initialState: INITIAL_STATE,
   reducers: {
-    switchCurrentPlayer: state => {
-      state.currentPlayer === 0
-        ? state.currentPlayer = 1
-        : state.currentPlayer = 0;
+    updateTile: (state, action: PayloadAction<[TileValue, TileValue]>) => {
+      if (state.boardState[action.payload[0]][action.payload[1]] === 2) {
+        state.boardState[action.payload[0]][action.payload[1]] = state.currentPlayer;
+        state.currentPlayer === 0
+          ? state.currentPlayer = 1
+          : state.currentPlayer = 0;
+      }
     },
   },
 });
 
-export const { switchCurrentPlayer } = uiSlice.actions;
+export const { updateTile } = uiSlice.actions;
 export default uiSlice.reducer;
