@@ -1,7 +1,9 @@
+import Board from './components/Board';
+
 const App = (): JSX.Element =>
   (
     <div>
-      <h1>Initial Commit</h1>
+      <Board />
     </div>
   );
 
