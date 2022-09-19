@@ -13,7 +13,7 @@ interface InitialStateDefaultObject {
 }
 
 const INITIAL_STATE: InitialStateDefaultObject = {
-  currentPlayer: 0,
+  currentPlayer: Math.round(Math.random()) as PlayerValue,
   boardState: [
     [2, 2, 2],
     [2, 2, 2],
