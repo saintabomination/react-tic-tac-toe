@@ -11,7 +11,14 @@ const INITIAL_STATE: InitialStateDefaultObject = {
 export const uiSlice = createSlice({
   name: 'ui',
   initialState: INITIAL_STATE,
-  reducers: {},
+  reducers: {
+    switchCurrentPlayer: state => {
+      state.currentPlayer === 0
+        ? state.currentPlayer = 1
+        : state.currentPlayer = 0;
+    },
+  },
 });
 
+export const { switchCurrentPlayer } = uiSlice.actions;
 export default uiSlice.reducer;
