@@ -2,6 +2,17 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  gap: 4px;
   width: 200px;
   height: 200px;
+
+  .tile {
+    cursor: pointer;
+    background-color: #141414;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #292929;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 const Tile = (): JSX.Element =>
   (
-    <h2>Tile</h2>
+    <div className="tile" />
   );
 
 export default Tile;
