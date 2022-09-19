@@ -1,11 +1,22 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import type {
+  PlayerValue,
+  TileValue,
+} from '../../typings/gameTypes';
+
 interface InitialStateDefaultObject {
-  currentPlayer: 0 | 1;
+  currentPlayer: PlayerValue;
+  boardState: TileValue[][];
 }
 
 const INITIAL_STATE: InitialStateDefaultObject = {
   currentPlayer: 0,
+  boardState: [
+    [2, 2, 2],
+    [2, 2, 2],
+    [2, 2, 2]
+  ],
 };
 
 export const uiSlice = createSlice({

@@ -1,18 +1,22 @@
+import { useSelector } from 'react-redux';
+
 import Tile from './Tile';
 
-const Board = (): JSX.Element =>
-  (
+import type { RootState } from '../redux/store';
+
+const Board = (): JSX.Element => {
+  const { boardState } = useSelector((state: RootState) => state.ui);
+  console.log(boardState);
+
+  return (
     <div className="board">
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
-      <Tile />
+      {boardState.map(
+        row => row.map(
+          (tile, index) => <Tile key={index} value={tile} />
+        )
+      )}
     </div>
   );
+}
 
 export default Board;
